@@ -394,7 +394,7 @@ export class MultiselectDropdown implements OnInit, OnChanges, DoCheck, OnDestro
     }
     if (this.numSelected === 0 || this.settings.fixedTitle) {
       this.title = (this.texts) ? this.texts.defaultTitle : '';
-    } else if (this.settings.displayAllSelectedText && this.model.length === numSelectedOptions) {
+    } else if (this.settings.displayAllSelectedText && this.model.length <= numSelectedOptions) { 
       this.title = (this.texts) ? this.texts.allSelected : '';
     } else if (this.settings.dynamicTitleMaxItems && this.settings.dynamicTitleMaxItems >= this.numSelected) {
       let useOptions = this.settings.isLazyLoad && this.lazyLoadOptions.length ? this.lazyLoadOptions : this.options;
